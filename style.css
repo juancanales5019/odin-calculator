@@ -26,12 +26,14 @@ body{
 .operation {
     background-color: rgb(136, 136, 114);
     padding: 3px;
+    height: 24px;
 }
 
 .result {
     background-color: rgb(179, 207, 179);
     text-align: right;
     padding: 3px;
+    height: 24px;
 }
 
 .buttons {
@@ -51,5 +53,4 @@ body{
 .row,button {
     flex:1;
     border-radius: 50%;
-    border: none;
 }
