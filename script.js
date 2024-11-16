@@ -23,6 +23,11 @@ let firstNumber = "";
 let secondNumber = "";
 let currentOperation = [];
 
+decimalPoint.addEventListener("click",()=>{
+    currentOperation.push(decimalPoint.value);
+    operacion.textContent += decimalPoint.value;
+});
+
 zero.addEventListener("click",()=>{
     currentOperation.push(zero.value);
     operacion.textContent += zero.value;
@@ -94,6 +99,26 @@ addition.addEventListener("click",()=>{
     currentOperation.length = 0;
 });
 
+multiplication.addEventListener("click",()=>{
+    operacion.textContent += multiplication.value;
+    if (result.textContent == "" ){
+        firstNumber = currentOperation.join("");
+    } else {
+        firstNumber = result.textContent;
+    }
+    currentOperation.length = 0;
+});
+
+division.addEventListener("click",()=>{
+    operacion.textContent += division.value;
+    if (result.textContent == "" ){
+        firstNumber = currentOperation.join("");
+    } else {
+        firstNumber = result.textContent;
+    }
+    currentOperation.length = 0;
+});
+
 solve.addEventListener("click",()=>{
     secondNumber = currentOperation.join("");
     if (operacion.textContent.includes("-")){
@@ -101,6 +126,12 @@ solve.addEventListener("click",()=>{
         operacion.textContent = "";
     } else if (operacion.textContent.includes("+")){
         result.textContent = parseFloat(firstNumber) + parseFloat(secondNumber);
+        operacion.textContent = "";
+    } else if (operacion.textContent.includes("/")){
+        result.textContent = parseFloat(firstNumber) / parseFloat(secondNumber);
+        operacion.textContent = "";
+    } else if (operacion.textContent.includes("*")){
+        result.textContent = parseFloat(firstNumber) * parseFloat(secondNumber);
         operacion.textContent = "";
     }
 });
