@@ -23,6 +23,14 @@ let firstNumber = "";
 let secondNumber = "";
 let currentOperation = [];
 
+clear.addEventListener("click",()=>{
+    firstNumber = "";
+    secondNumber = "";
+    currentOperation = [];
+    operacion.textContent = "";
+    result.textContent = "";
+});
+
 decimalPoint.addEventListener("click",()=>{
     currentOperation.push(decimalPoint.value);
     operacion.textContent += decimalPoint.value;
