@@ -82,7 +82,7 @@ subtraction.addEventListener("click",()=>{
 
 solve.addEventListener("click",()=>{
     secondNumber = currentOperation.join("");
-    console.log(firstNumber);
-    console.log(secondNumber);
-    
+    if (operacion.textContent.includes("-")){
+        result.textContent = parseFloat(firstNumber) - parseFloat(secondNumber);
+    }
 });
