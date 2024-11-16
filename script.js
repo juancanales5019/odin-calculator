@@ -76,7 +76,21 @@ nine.addEventListener("click",()=>{
 
 subtraction.addEventListener("click",()=>{
     operacion.textContent += subtraction.value;
-    firstNumber = currentOperation.join("");
+    if (result.textContent == "" ){
+        firstNumber = currentOperation.join("");
+    } else {
+        firstNumber = result.textContent;
+    }
+    currentOperation.length = 0;
+});
+
+addition.addEventListener("click",()=>{
+    operacion.textContent += addition.value;
+    if (result.textContent == "" ){
+        firstNumber = currentOperation.join("");
+    } else {
+        firstNumber = result.textContent;
+    }
     currentOperation.length = 0;
 });
 
@@ -84,5 +98,9 @@ solve.addEventListener("click",()=>{
     secondNumber = currentOperation.join("");
     if (operacion.textContent.includes("-")){
         result.textContent = parseFloat(firstNumber) - parseFloat(secondNumber);
+        operacion.textContent = "";
+    } else if (operacion.textContent.includes("+")){
+        result.textContent = parseFloat(firstNumber) + parseFloat(secondNumber);
+        operacion.textContent = "";
     }
 });
